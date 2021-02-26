@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  button(type="submit", form="getIplInfo") Get IPL Info
+  form(id="getIplInfo",action="/iplinfo", method="GET")
+  if output
+    div 
+      p Output:
+      for line in output
+        span #{line}
+        br
