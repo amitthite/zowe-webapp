@@ -13,8 +13,8 @@ class Mainframe {
 
     async getIplInfo(account) {
         const session = zowe.ZosmfSession.createBasicZosmfSessionFromArguments(this.profile);
-        //const command = `D IPLINFO`;
-        const command = `D J L`;
+        const command = `D IPLINFO`;
+        //const command = `D J L`;
         const out = await zowe.IssueCommand.issueAndCollect(session, {command}, {});
         const commandResponse = out.commandResponse.split('\n');
         return commandResponse;
